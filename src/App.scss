@@ -1,0 +1,30 @@
+@import "./styles/export.scss";
+@import "./styles/variables.scss";
+@import "./components/home/home";
+@import "./routes/movie-detail/MovieDetail.styles.scss";
+
+@import "./components/movie-card/MovieCard.styles.scss";
+@import "./routes/search/search.styles.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $open-sans;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 20px 100px;
+}
+
+.nav-links-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: $feems-white;
+  text-decoration: none;
+}

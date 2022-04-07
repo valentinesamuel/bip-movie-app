@@ -5,7 +5,7 @@ import { ReactComponent as Logo } from './assets/Logo.svg'
 import Home from './components/home/home.component';
 import MoviePage from './routes/page/page.component';
 import Search from './routes/search/search.component';
-import Navigation from './routes/navigation/navigation.component';
+import MovieDetail from './routes/movie-detail/MovieDetail.component';
 
 function App() {
   return (<>
@@ -23,6 +23,8 @@ function App() {
 
       <Route path='/home/*' element={<Home />} />
       <Route path='/search' element={<Search />} />
+      <Route path='/movie/*' element={<MovieDetail />} />
+
 
 
 
