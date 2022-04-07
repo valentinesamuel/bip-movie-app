@@ -24,15 +24,7 @@ const MoviePage = () => {
     <div>
       {pageNumber}
       <div className="movies">
-        {/* <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard /> */}
+        
       </div>
     </div>
   );

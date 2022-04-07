@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Star from "../../assets/rating-star.svg";
+
 import MovieCard from "../../components/movie-card/MovieCard.component";
 
 const Search = () => {
   const [searchString, setSearchString] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [searchList, setSearchList] = useState([]);
 
   const onChangeHandler = (event) => {
@@ -13,14 +12,12 @@ const Search = () => {
   };
 
   const fetchSearchMovies = () => {
+    setLoading(true);
     fetch(
       `https://movie-task.vercel.app/api/search?page=1&query=${searchString}`
     )
       .then((response) => response.json())
       .then((data) => setSearchList(data.data.results))
-      .catch((error) => {
-        setError(error);
-      })
       .finally(setLoading(false));
   };
   console.log(searchList);
@@ -36,12 +33,15 @@ const Search = () => {
       <button className="btn" onClick={fetchSearchMovies}>
         Search
       </button>
-      <div className="movie-row">
-
-      {searchList.map((movie) => {
-        return <MovieCard movie={movie} key={movie.id} />;
-      })}
-      </div>
+      {loading ? (
+        <p className="loading">Loading</p>
+      ) : (
+        <div className="movie-row">
+          {searchList.map((movie) => {
+            return <MovieCard movie={movie} key={movie.id} />;
+          })}
+        </div>
+      )}
     </div>
   );
 };
