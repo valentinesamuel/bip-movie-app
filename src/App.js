@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Fragment } from 'react';
+import { Link, Outlet, Route, Routes } from 'react-router-dom';
+import { ReactComponent as Logo } from './assets/Logo.svg'
+import Home from './components/home/home.component';
+import MoviePage from './routes/page/page.component';
+import Search from './routes/search/search.component';
+import Navigation from './routes/navigation/navigation.component';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return (<>
+    <div className="navigation">
+      <Link className="logo-container" to="/home">
+        <Logo className="logo" />
+      </Link>
+      <div className="nav-links-container">
+        <Link className="nav-link" to="/search">
+          SEARCH
+        </Link>
+      </div>
     </div>
+    <Routes>
+
+      <Route path='/home/*' element={<Home />} />
+      <Route path='/search' element={<Search />} />
+
+
+
+    </Routes>
+  </>
   );
 }
 
