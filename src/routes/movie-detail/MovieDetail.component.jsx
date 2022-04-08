@@ -5,8 +5,6 @@ import MovieDetailView from "./movie-detail-view";
 const MovieDetail = () => {
   const { pathname } = useLocation();
   const [movieDetail, setMovieDetail] = useState([]);
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState([]);
   const movieId = pathname.split("/")[2];
 
   useEffect(() => {
@@ -14,9 +12,9 @@ const MovieDetail = () => {
       .then((response) => response.json())
       .then((data) => setMovieDetail(data))
       .catch((error) => {
-        setError(error);
+       console.log(error);
       })
-      .finally(setLoading(false));
+     
   }, [movieId]);
 
   let testArr = Object.entries(movieDetail);

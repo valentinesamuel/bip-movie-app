@@ -7,7 +7,7 @@ const Home = () => {
   const [pageNumber, setPageNumber] = useState(1);
   useEffect(
     () => navigate(`page/${pageNumber}`, { state: { pageNumber: pageNumber } }),
-    [pageNumber]
+    [pageNumber, navigate]
   );
 
   const onfetchMovies = ()=>{

@@ -1,7 +1,6 @@
 import React from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import RatingStar from "../../assets/rating-star.svg";
-import MovieDetail from "../../routes/movie-detail/MovieDetail.component";
 
 const MovieCard = ({ movie }) => {
   const navigate = useNavigate();
@@ -15,7 +14,7 @@ const MovieCard = ({ movie }) => {
       <div className="image">
         <img
           src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-          alt="movie-image"
+          alt="movie-poster"
         />
       </div>
       <p className="title">{movie.title}</p>
