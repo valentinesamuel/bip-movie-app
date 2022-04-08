@@ -4,27 +4,27 @@ import MovieCard from "../../components/movie-card/MovieCard.component";
 
 const MoviePage = () => {
   const { pageNumber } = useLocation().state;
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [movieList, setMovieList] = useState([]);
   const [error, setError] = useState("");
 
-  //   useEffect(() => {
-  //     fetch(`https://movie-task.vercel.app/api/popular?page=${pageNumber}`)
-  //       .then((response) => response.json())
-  //       .then((data) => setMovieList(data.data))
-  //       .catch((error) => {
-  //         setError(error);
-  //       })
-  //       .finally(setLoading(false));
-  //   }, []);
+  useEffect(() => {
+    fetch(`https://movie-task.vercel.app/api/popular?page=${pageNumber}`)
+      .then((response) => response.json())
+      .then((data) => setMovieList(data.data.results))
+      .catch((error) => {
+        setError(error);
+      })
+      .finally(setLoading(false));
+  }, []);
 
-  console.log(movieList.results);
 
   return (
     <div>
-      {pageNumber}
       <div className="movies">
-        
+        {movieList.map((movie) => {
+          return <MovieCard movie={movie} key={movie.id} />;
+        })}
       </div>
     </div>
   );

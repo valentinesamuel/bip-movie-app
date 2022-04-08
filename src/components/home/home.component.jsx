@@ -4,7 +4,7 @@ import MoviePage from "../../routes/page/page.component";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [pageNumber, setPageNumber] = useState(0);
+  const [pageNumber, setPageNumber] = useState(1);
   useEffect(
     () => navigate(`page/${pageNumber}`, { state: { pageNumber: pageNumber } }),
     [pageNumber]

@@ -1,3 +1,133 @@
-.detail-page{
-margin-left: 100px;
+.detail-page {
+  margin-left: 100px;
+}
+
+.movie-header {
+  color: $feems-white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .left-part {
+    .producer {
+      display: flex;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      .bar {
+        width: 5px;
+        background-color: $feems-red;
+        margin-right: 10px;
+      }
+      .text {
+        font-size: sub-title;
+        max-width: 400px;
+      }
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h1 {
+        font-size: title;
+        margin-bottom: 30px;
+      }
+      p {
+        position: relative;
+        background-color: red;
+        position: absolute;
+        top: 0;
+        right: 0;
+        writing-mode: vertical-lr;
+        padding: 10px;
+        color: $feems-white;
+      }
+    }
+
+    .genre {
+      margin-bottom: 25px;
+      span {
+        margin: 0 15px 0 10px;
+      }
+    }
+
+    .synopsis {
+      font-size: body;
+      max-width: 500px;
+      line-height: 2.5rem;
+      margin-bottom: 48px;
+    }
+    .language {
+      margin-top: 20px;
+    }
+
+    .watch-now {
+      background-color: $feems-red;
+      padding: 10px 20px;
+      margin-right: 5%;
+      border: none;
+      color: $feems-white;
+      cursor: pointer;
+    }
+    .details {
+      background-color: $feems-black;
+      color: $feems-white;
+      padding: 10px 20px;
+      border: none;
+    }
+  }
+  .right-part {
+    max-width: 600px;
+
+    img {
+      position: relative;
+      top: 80px;
+      right: 80px;
+      width: 100%;
+      height: auto;
+      z-index: -1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 20px;
+    height: auto;
+
+    nav {
+      a {
+        font-size: 3rem;
+      }
+      margin-bottom: 30px;
+      padding-top: 20px;
+    }
+    .title {
+      display: block;
+      h1 {
+        font-size: title;
+        margin-bottom: 30px;
+      }
+      p {
+        background-color: rgba(255, 0, 0, 0.445);
+        padding: 10px;
+        color: $feems-white;
+        width: fit-content;
+        margin-bottom: 12px;
+      }
+    }
+    .synopsis {
+      max-width: 100%;
+      margin-bottom: 30px;
+      font-size: 1.2rem;
+    }
+    .producer {
+      display: flex;
+      margin-bottom: 10px;
+      .text {
+        max-width: 100%;
+      }
+    }
+    .cta {
+      padding-bottom: 50px;
+    }
+  }
 }

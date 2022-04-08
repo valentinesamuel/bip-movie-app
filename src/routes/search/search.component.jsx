@@ -20,10 +20,9 @@ const Search = () => {
       .then((data) => setSearchList(data.data.results))
       .finally(setLoading(false));
   };
-  console.log(searchList);
 
   return (
-    <div>
+    <div className="search-container">
       <input
         className="input"
         type="search"

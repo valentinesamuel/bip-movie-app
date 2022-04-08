@@ -28,3 +28,9 @@
   color: $feems-white;
   text-decoration: none;
 }
+
+@media (max-width: 480px) {
+  .navigation {
+    padding: 20px 50px 20px 20px;
+  }
+}
