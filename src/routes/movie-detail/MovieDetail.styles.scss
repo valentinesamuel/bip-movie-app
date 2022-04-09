@@ -60,20 +60,18 @@
     .language {
       margin-top: 20px;
     }
-
-    .watch-now {
-      background-color: $feems-red;
-      padding: 10px 20px;
-      margin-right: 5%;
-      border: none;
-      color: $feems-white;
-      cursor: pointer;
+    .rating{
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
     }
-    .details {
-      background-color: $feems-black;
-      color: $feems-white;
-      padding: 10px 20px;
-      border: none;
+.star{
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+    .company{
+      margin-right: 10px;
     }
   }
   .right-part {
@@ -88,46 +86,28 @@
       z-index: -1;
     }
   }
-
-  @media (max-width: 480px) {
-    padding: 0 20px;
-    height: auto;
-
-    nav {
-      a {
-        font-size: 3rem;
-      }
-      margin-bottom: 30px;
-      padding-top: 20px;
+}
+@media (max-width: 480px) {
+  .detail-page {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .movie-header {
+    flex-direction: column;
+    .left-part{
+    .synopsis{
+        margin-bottom: 10px;
     }
-    .title {
-      display: block;
-      h1 {
-        font-size: title;
-        margin-bottom: 30px;
-      }
-      p {
-        background-color: rgba(255, 0, 0, 0.445);
-        padding: 10px;
-        color: $feems-white;
-        width: fit-content;
-        margin-bottom: 12px;
-      }
     }
-    .synopsis {
+    .right-part {
       max-width: 100%;
-      margin-bottom: 30px;
-      font-size: 1.2rem;
-    }
-    .producer {
-      display: flex;
-      margin-bottom: 10px;
-      .text {
-        max-width: 100%;
+      margin-top: 60px;
+      margin-bottom: 100px;
+      img {
+        position: static;
+        top: 0;
+        right: 0;
       }
-    }
-    .cta {
-      padding-bottom: 50px;
     }
   }
 }

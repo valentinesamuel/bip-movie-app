@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import RatingStar from '../../assets/rating-star.svg'
 
 const MovieDetailView = ({ movieData }) => {
   console.log(movieData);
@@ -22,6 +23,9 @@ const MovieDetailView = ({ movieData }) => {
           Tagline:  {movieData.tagline}
         </p>
         <p className='language'>Language : {movieData.spoken_languages.map(lang => <span>{lang.english_name}</span>)}</p>
+        <p className='language'>Companies : {movieData.production_countries.map(proComp => <span className='company'>{proComp.name}</span>)}</p>
+        <p className='language'>Released : {movieData.release_date}</p>
+        <span className='rating'><img src={RatingStar} alt="rating-star" className='star'/> : {movieData.vote_average}</span>
       </div>
       <div className="right-part">
         <img src={`https://image.tmdb.org/t/p/original/${movieData.backdrop_path}`} alt="movie-poster" />
